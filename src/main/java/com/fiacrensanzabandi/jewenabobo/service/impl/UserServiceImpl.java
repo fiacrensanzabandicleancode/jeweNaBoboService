@@ -26,7 +26,7 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public boolean verifyIfUserExists(User user) {
-		return userRepository.findByName(user.getName()) != null;
+		return userRepository.findByNameAndPassword(user.getName(), user.getPassword()) != null;
 	}
 
 	@Override

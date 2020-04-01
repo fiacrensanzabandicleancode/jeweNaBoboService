@@ -31,7 +31,7 @@ public class User implements Serializable {
 	private double interest;
 	private double payedDebtsAmount;
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
-	private List<PayedDebt> payedDeptHistory;
+	private List<PayedDebt> payedDebtHistory;
 
 	public long getId() {
 		return id;
@@ -81,12 +81,12 @@ public class User implements Serializable {
 		this.payedDebtsAmount = payedDebtAmount;
 	}
 
-	public List<PayedDebt> getPayedDeptHistory() {
-		return payedDeptHistory;
+	public List<PayedDebt> getPayedDebtHistory() {
+		return payedDebtHistory;
 	}
 
-	public void setPayedDeptHistory(List<PayedDebt> payedDeptHistory) {
-		this.payedDeptHistory = payedDeptHistory;
+	public void setPayedDebtHistory(List<PayedDebt> payedDeptHistory) {
+		this.payedDebtHistory = payedDeptHistory;
 	}
 
 	// TODO generate equals
