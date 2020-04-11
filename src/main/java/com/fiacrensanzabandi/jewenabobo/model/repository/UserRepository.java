@@ -18,11 +18,5 @@ public interface UserRepository extends JpaRepository<User, Long>, JpaSpecificat
 	static Specification<User> hasPassword(String password) {
 		return (user, cq, cb) -> cb.equal(user.get("password"), password);
 	}
-	
-	// TODO, peut être faut il faire une primary key id/name/password et récupérer le user by name & password.
-	@Query(value ="select * from user where user.name = :name", nativeQuery = true)
-	User findByName(String name);
-	
-	@Query(value = "select * from user where user.name = :name and user.password = :password", nativeQuery = true)
-	User findByNameAndPassword(String name, String password);
+		
 }

@@ -21,14 +21,11 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public User findUserByName(User user) {
-		// return userRepository.findByName(user.getName());
 		return userRepository.findAll(UserRepository.hasName(user.getName())).stream().findFirst().orElse(null);
 	}
 
 	@Override
 	public boolean verifyIfUserExists(User user) {
-		// return userRepository.findByNameAndPassword(user.getName(),
-		// user.getPassword()) != null;
 		return userRepository
 				.findAll(UserRepository.hasName(user.getName()).and(UserRepository.hasPassword(user.getPassword())))
 				.stream().count() > 0;
