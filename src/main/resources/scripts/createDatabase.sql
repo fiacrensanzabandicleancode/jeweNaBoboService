@@ -1,3 +1,4 @@
 CREATE DATABASE jeweNaBobo CHARACTER SET utf8 COLLATE utf8_bin;
 CREATE USER 'jeweNaBobo' IDENTIFIED BY 'java';
 GRANT ALL PRIVILEGES ON * . * TO 'jeweNaBobo';
+use jeweNaBobo;
